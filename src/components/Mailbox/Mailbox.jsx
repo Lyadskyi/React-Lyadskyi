@@ -12,7 +12,7 @@
 //   );
 // };
 
-const Mailbox = ({ name, unreadMessages }) => {
+export default function Mailbox({ name, unreadMessages }) {
   return (
     <>
       <h1>Message</h1>
@@ -24,6 +24,4 @@ const Mailbox = ({ name, unreadMessages }) => {
       </p>
     </>
   );
-};
-
-export default Mailbox;
+}
