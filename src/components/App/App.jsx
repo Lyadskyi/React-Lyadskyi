@@ -7,8 +7,8 @@ import Card from "../Card/Card";
 export default function App() {
   return (
     <>
-      <h1>Best selling</h1>
       <hr /> <hr />
+      <h1>Best selling</h1>
       <Product
         name="Tacos With Lime"
         imgUrl="https://www.loveandoliveoil.com/wp-content/uploads/2020/11/steak-street-tacos-FEAT-1200x800.jpg"
@@ -36,8 +36,11 @@ export default function App() {
       <hr /> <hr />
       {/* Властивість props.children */}
       <Card text="Message as a text prop WITH MY REMARKS" />
-      {/* Використання */}
-      <Card>Text between opening and closing tag</Card>
+      {/* Використання компонента */}
+      <Card>
+        <h1>Card title</h1>
+        <p>Text between opening and closing tag</p>
+      </Card>
       <hr /> <hr />
     </>
   );
