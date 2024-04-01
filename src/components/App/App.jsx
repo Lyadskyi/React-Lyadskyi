@@ -3,6 +3,7 @@
 import Product from "../Product/Product";
 import Mailbox from "../Mailbox/Mailbox";
 import Card from "../Card/Card";
+import Alert from "../Alert/Alert";
 
 export default function App() {
   return (
@@ -26,21 +27,38 @@ export default function App() {
       />
       <hr /> <hr />
       <Mailbox name="King Artur" unreadMessages="Hello world!" />
-      <hr /> <hr />
       {/* Колекції */}
-      <div>
+      {/* <div>
         {[1, 2, 3].map((item) => {
           return <div>{item}</div>;
         })}
-      </div>
+      </div> */}
       <hr /> <hr />
       {/* Властивість props.children */}
       <Card text="Message as a text prop WITH MY REMARKS" />
-      {/* Використання компонента */}
+      {/* Використання компонента <Card> */}
       <Card>
         <h1>Card title</h1>
         <p>Text between opening and closing tag</p>
       </Card>
+      <hr /> <hr />
+      {/* Вбудовані стилі <Alert> */}
+      {/* <Alert /> */}
+      {/* <Alert>Please update your email!</Alert>
+      <Alert>There was an error during transaction!</Alert>
+      <Alert>Payment received, thank you for your purchase!</Alert> */}
+      <Alert variant="info">
+        Would you like to browse our recommended products?
+      </Alert>
+      <Alert variant="error">
+        There was an error during your last transaction
+      </Alert>
+      <Alert variant="success">
+        Payment received, thank you for your purchase
+      </Alert>
+      <Alert variant="warning">
+        Please update your profile contact information
+      </Alert>
       <hr /> <hr />
     </>
   );
