@@ -1,7 +1,11 @@
 // src/components/Alert.jsx
 //* src/components/App.jsx *//
 
-import "./Alert.css";
+import "./Alert.module.css";
+import clsx from "clsx";
+
+// Синтаксис імпорту CSS-модуля
+// import css from "../Alert/Alert.module.css";
 
 // export default function Alert() {
 //   const alertStyles = {
@@ -116,6 +120,7 @@ export default function Alert({ variant, children }) {
     </p>
   );
 }
+
 // Стилі компонента імпортуються у файл оголошення компонента, після чого CSS-класи описані у таблиці стилів доступні для
 // використання. У React HTML-атрибуту class відповідає JSX-атрибут className, куди можна передати рядок з перерахуванням
 // усіх класів елемента.
@@ -125,3 +130,12 @@ export default function Alert({ variant, children }) {
 // const Alert = ({ children }) => {
 //   return <p className="alert">{children}</p>;
 // };
+
+const className = clsx(
+  "first",
+  10,
+  undefined && "second",
+  true && "third",
+  // false ? "fourth" : "fifth"
+);
+console.log(className); // "first 10 third"

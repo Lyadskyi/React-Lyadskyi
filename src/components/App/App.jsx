@@ -5,6 +5,10 @@ import Mailbox from "../Mailbox/Mailbox";
 import Card from "../Card/Card";
 import Alert from "../Alert/Alert";
 import BookList from "../BookList/BookList";
+import Button from "../Button/Button";
+import LoginButton from "../LoginButton/LoginButton";
+import FollowButton from "../FollowButton/FollowButton";
+import HiUser from "../HiUser/HiUser";
 
 // Import files.json
 import favouriteBooks from "../../favouriteBooks.json";
@@ -64,6 +68,12 @@ export default function App() {
         Please update your profile contact information
       </Alert>
       <hr /> <hr />
+      <h1>Button</h1>
+      <Button />
+      <LoginButton />
+      <FollowButton />
+      <hr /> <hr />
+      <HiUser name="Dmytro Liadskyi" />
     </>
   );
 }
