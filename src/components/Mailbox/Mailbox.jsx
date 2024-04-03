@@ -15,7 +15,6 @@
 export default function Mailbox({ name, unreadMessages }) {
   return (
     <>
-      <h1>Message</h1>
       <p>Hello {name}</p>
       <p>
         {unreadMessages.length > 0

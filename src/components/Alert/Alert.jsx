@@ -1,6 +1,8 @@
 // src/components/Alert.jsx
 //* src/components/App.jsx *//
 
+import "./Alert.css";
+
 // export default function Alert() {
 //   const alertStyles = {
 //     margin: 8,
@@ -114,3 +116,12 @@ export default function Alert({ variant, children }) {
     </p>
   );
 }
+// Стилі компонента імпортуються у файл оголошення компонента, після чого CSS-класи описані у таблиці стилів доступні для
+// використання. У React HTML-атрибуту class відповідає JSX-атрибут className, куди можна передати рядок з перерахуванням
+// усіх класів елемента.
+
+// src/components/Alert.jsx
+
+// const Alert = ({ children }) => {
+//   return <p className="alert">{children}</p>;
+// };

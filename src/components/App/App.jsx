@@ -4,6 +4,10 @@ import Product from "../Product/Product";
 import Mailbox from "../Mailbox/Mailbox";
 import Card from "../Card/Card";
 import Alert from "../Alert/Alert";
+import BookList from "../BookList/BookList";
+
+// Import files.json
+import favouriteBooks from "../../favouriteBooks.json";
 
 export default function App() {
   return (
@@ -26,13 +30,12 @@ export default function App() {
         price={29.84}
       />
       <hr /> <hr />
+      <h1>Message</h1>
       <Mailbox name="King Artur" unreadMessages="Hello world!" />
+      <hr /> <hr />
       {/* Колекції */}
-      {/* <div>
-        {[1, 2, 3].map((item) => {
-          return <div>{item}</div>;
-        })}
-      </div> */}
+      <h1>Books of the week</h1>
+      <BookList books={favouriteBooks} />
       <hr /> <hr />
       {/* Властивість props.children */}
       <Card text="Message as a text prop WITH MY REMARKS" />
@@ -47,6 +50,7 @@ export default function App() {
       {/* <Alert>Please update your email!</Alert>
       <Alert>There was an error during transaction!</Alert>
       <Alert>Payment received, thank you for your purchase!</Alert> */}
+      <h1>Dynamic styles</h1>
       <Alert variant="info">
         Would you like to browse our recommended products?
       </Alert>
