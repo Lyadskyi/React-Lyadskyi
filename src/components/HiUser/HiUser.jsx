@@ -1,15 +1,23 @@
 // src/components/HiUser.jsx
 
-import { HiUser } from "react-icons/hi";
+import { AiFillGithub } from "react-icons/ai";
+import { FcBusinessman } from "react-icons/fc";
+import clsx from "clsx";
+import css from "../HiUser/HiUser.module.css";
 
-const UserMenu = ({ name }) => {
+console.log(clsx("First", true && "Second", true && "Third")); // a b c
+
+const HiUser = ({ name }) => {
   return (
-    <div>
-      <p>
-        <HiUser className="my-icon" size="48" /> {name}
-      </p>
-    </div>
+    <>
+      <h1>React Icon</h1>
+      <div className={css.title}>
+        <AiFillGithub className={css.icon} />
+        <FcBusinessman size="50" />
+        <p className={css.username}>{name}</p>
+      </div>
+    </>
   );
 };
 
-export default UserMenu;
+export default HiUser;

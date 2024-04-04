@@ -2,8 +2,11 @@
 
 import clsx from "clsx";
 
-const Button = ({ variant, children }) => {
-  // Базові стилі кнопки з кількома варіантами відображення
-  return <button className={clsx("button", variant)}>{children}</button>;
+const Button = ({ variant, type = "button", children }) => {
+  return (
+    <button className={clsx("button", variant, "type", type)}>
+      {children}
+    </button>
+  );
 };
 export default Button;

@@ -1,0 +1,16 @@
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  color: #e74c3c;
+}
+
+.username {
+  font-size: 50px;
+  color: #042341;
+}

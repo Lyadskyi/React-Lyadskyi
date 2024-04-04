@@ -1,5 +1,6 @@
 // src/components/App.jsx
 
+// Import Components
 import Product from "../Product/Product";
 import Mailbox from "../Mailbox/Mailbox";
 import Card from "../Card/Card";
@@ -8,7 +9,10 @@ import BookList from "../BookList/BookList";
 import Button from "../Button/Button";
 import LoginButton from "../LoginButton/LoginButton";
 import FollowButton from "../FollowButton/FollowButton";
+
+// Import assets
 import HiUser from "../HiUser/HiUser";
+import naturePhoto from "../../assets/nature.jpg";
 
 // Import files.json
 import favouriteBooks from "../../favouriteBooks.json";
@@ -73,7 +77,17 @@ export default function App() {
       <LoginButton />
       <FollowButton />
       <hr /> <hr />
-      <HiUser name="Dmytro Liadskyi" />
+      <h1>Photo nature</h1>
+      <img src={naturePhoto} alt="Nature" width="620" />
+      <hr />
+      <img
+        src="https://assets-global.website-files.com/5fe0d678b18d7e19e32c3389/5fe47fac541e6e361f91eb6d_hero.jpg"
+        alt="Hero"
+        width="620"
+      />
+      <hr /> <hr />
+      <HiUser name="GitHub & Businessman" />
+      <hr /> <hr />
     </>
   );
 }
