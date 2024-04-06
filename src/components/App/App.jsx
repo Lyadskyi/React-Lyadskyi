@@ -1,93 +1,54 @@
 // src/components/App.jsx
+import { useState } from "react";
 
 // Import Components
-import Product from "../Product/Product";
-import Mailbox from "../Mailbox/Mailbox";
-import Card from "../Card/Card";
-import Alert from "../Alert/Alert";
-import BookList from "../BookList/BookList";
-import Button from "../Button/Button";
-import LoginButton from "../LoginButton/LoginButton";
-import FollowButton from "../FollowButton/FollowButton";
+import CustomButton from "../CustomButton/CustomButton";
 
 // Import assets
-import HiUser from "../HiUser/HiUser";
-import naturePhoto from "../../assets/nature.jpg";
 
 // Import files.json
-import favouriteBooks from "../../favouriteBooks.json";
 
-export default function App() {
+import css from "../App/App.module.css";
+
+const App = () => {
+  let clicks = 0;
+  const [clicksOne, setClicksOne] = useState(0);
+  const handleClick = () => {
+    alert("I'm a button!");
+  };
+  const handleClickOne = (evt) => {
+    console.log(evt);
+  };
+  const handleClickTwo = () => {
+    clicks = clicks + 1;
+  };
+  const handleClickThree = () => {
+    setClicksOne(clicksOne + 1);
+  };
   return (
     <>
       <hr /> <hr />
-      <h1>Best selling</h1>
-      <Product
-        name="Tacos With Lime"
-        imgUrl="https://www.loveandoliveoil.com/wp-content/uploads/2020/11/steak-street-tacos-FEAT-1200x800.jpg"
-        price={10.99}
-      />
-      <Product
-        name="Fries and Burger"
-        imgUrl="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?dpr=2&h=480&w=640"
-        price={14.29}
-      />
-      <Product
-        name="Fish and meat"
-        imgUrl="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/iStock-1165495226-1200x628.jpg"
-        price={29.84}
-      />
+      <button className={css.btn} onClick={handleClick}>
+        Click me!
+      </button>
       <hr /> <hr />
-      <h1>Message</h1>
-      <Mailbox name="King Artur" unreadMessages="Hello world!" />
+      <button onClick={handleClickOne}>First button</button>
+      <button onClick={(evt) => console.log(evt)}>Second button</button>
       <hr /> <hr />
-      {/* Колекції */}
-      <h1>Books of the week</h1>
-      <BookList books={favouriteBooks} />
+      <CustomButton message="Playing music!">Play some music</CustomButton>
+      <CustomButton message="Uploading your data!">Upload data</CustomButton>
       <hr /> <hr />
-      {/* Властивість props.children */}
-      <Card text="Message as a text prop WITH MY REMARKS" />
-      {/* Використання компонента <Card> */}
-      <Card>
-        <h1>Card title</h1>
-        <p>Text between opening and closing tag</p>
-      </Card>
+      <button onClick={handleClickTwo}>Current: {clicks}</button>
       <hr /> <hr />
-      {/* Вбудовані стилі <Alert> */}
-      {/* <Alert /> */}
-      {/* <Alert>Please update your email!</Alert>
-      <Alert>There was an error during transaction!</Alert>
-      <Alert>Payment received, thank you for your purchase!</Alert> */}
-      <h1>Dynamic styles</h1>
-      <Alert variant="info">
-        Would you like to browse our recommended products?
-      </Alert>
-      <Alert variant="error">
-        There was an error during your last transaction
-      </Alert>
-      <Alert variant="success">
-        Payment received, thank you for your purchase
-      </Alert>
-      <Alert variant="warning">
-        Please update your profile contact information
-      </Alert>
-      <hr /> <hr />
-      <h1>Button</h1>
-      <Button />
-      <LoginButton />
-      <FollowButton />
-      <hr /> <hr />
-      <h1>Photo nature</h1>
-      <img src={naturePhoto} alt="Nature" width="620" />
-      <hr />
-      <img
-        src="https://assets-global.website-files.com/5fe0d678b18d7e19e32c3389/5fe47fac541e6e361f91eb6d_hero.jpg"
-        alt="Hero"
-        width="620"
-      />
-      <hr /> <hr />
-      <HiUser name="GitHub & Businessman" />
+      <button onClick={handleClickThree}>Current: {clicksOne}</button>
       <hr /> <hr />
     </>
   );
-}
+};
+export default App;
+
+// const App = () => {
+//   return <button onClick={() => alert("I'm a button!")}>Click me!</button>;
+// };
+
+// export default App;
