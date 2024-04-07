@@ -1,6 +1,4 @@
-/* src/components/App.module.css */
-
-.form {
+.unForm {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -13,8 +11,4 @@
 }
 .input:hover {
   border: coral;
-}
-
-.btn:hover {
-  scale: 1.05;
 }
