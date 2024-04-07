@@ -1,7 +1,5 @@
 /* src/components/App.module.css */
 
-.localStorage {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 8px;
+.btn:hover {
+  scale: 1.05;
 }
