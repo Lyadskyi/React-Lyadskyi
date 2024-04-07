@@ -21,7 +21,7 @@ export default function App() {
   return (
     <>
       <hr /> <hr />
-      <h1>Best selling</h1>
+      <h2>Best selling</h2>
       <Product
         name="Tacos With Lime"
         imgUrl="https://www.loveandoliveoil.com/wp-content/uploads/2020/11/steak-street-tacos-FEAT-1200x800.jpg"
@@ -38,18 +38,18 @@ export default function App() {
         price={29.84}
       />
       <hr /> <hr />
-      <h1>Message</h1>
+      <h2>Message</h2>
       <Mailbox name="King Artur" unreadMessages="Hello world!" />
       <hr /> <hr />
       {/* Колекції */}
-      <h1>Books of the week</h1>
+      <h2>Books of the week</h2>
       <BookList books={favouriteBooks} />
       <hr /> <hr />
       {/* Властивість props.children */}
       <Card text="Message as a text prop WITH MY REMARKS" />
       {/* Використання компонента <Card> */}
       <Card>
-        <h1>Card title</h1>
+        <h2>Card title</h2>
         <p>Text between opening and closing tag</p>
       </Card>
       <hr /> <hr />
@@ -58,7 +58,7 @@ export default function App() {
       {/* <Alert>Please update your email!</Alert>
       <Alert>There was an error during transaction!</Alert>
       <Alert>Payment received, thank you for your purchase!</Alert> */}
-      <h1>Dynamic styles</h1>
+      <h2>Dynamic styles</h2>
       <Alert variant="info">
         Would you like to browse our recommended products?
       </Alert>
@@ -72,18 +72,18 @@ export default function App() {
         Please update your profile contact information
       </Alert>
       <hr /> <hr />
-      <h1>Button</h1>
+      <h2>Button</h2>
       <Button />
       <LoginButton />
       <FollowButton />
       <hr /> <hr />
-      <h1>Photo nature</h1>
-      <img src={naturePhoto} alt="Nature" width="620" />
+      <h2>Photo nature</h2>
+      <img src={naturePhoto} alt="Nature" width="500" />
       <hr />
       <img
         src="https://assets-global.website-files.com/5fe0d678b18d7e19e32c3389/5fe47fac541e6e361f91eb6d_hero.jpg"
         alt="Hero"
-        width="620"
+        width="500"
       />
       <hr /> <hr />
       <HiUser name="GitHub & Businessman" />

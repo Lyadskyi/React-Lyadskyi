@@ -10,10 +10,10 @@ console.log(clsx("First", true && "Second", true && "Third")); // a b c
 const HiUser = ({ name }) => {
   return (
     <>
-      <h1>React Icon</h1>
+      <h2>React Icon</h2>
       <div className={css.title}>
         <AiFillGithub className={css.icon} />
-        <FcBusinessman size="50" />
+        <FcBusinessman size="40" />
         <p className={css.username}>{name}</p>
       </div>
     </>
