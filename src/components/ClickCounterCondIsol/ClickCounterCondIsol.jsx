@@ -5,3 +5,13 @@ const ClickCounterCondIsol = ({ value, onUpdate }) => {
 };
 
 export default ClickCounterCondIsol;
+
+// const App = () => {
+//   useEffect(() => {
+//     setInterval(() => {
+//       console.log(`Interval - ${Date.now()}`);
+//     }, 2000);
+//   }, []);
+
+//   return <div>App</div>;
+// };
