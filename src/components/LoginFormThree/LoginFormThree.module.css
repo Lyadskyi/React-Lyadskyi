@@ -1,21 +1,17 @@
-/* src/components/App.module.css */
-
 .form {
   display: flex;
-  justify-content: center;
+  width: fit-content;
+  flex-direction: column;
   gap: 8px;
 }
 
 .input {
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
   background: antiquewhite;
 }
 
-.btn:hover {
-  scale: 1.05;
-}
-
-.title {
+.label {
+  font-size: 20px;
   color: brown;
 }
