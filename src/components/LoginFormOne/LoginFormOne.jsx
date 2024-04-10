@@ -1,4 +1,5 @@
 // src/components/LoginFormOne.jsx
+
 import css from "./LoginFormOne.module.css";
 
 const LoginFormOne = () => {
@@ -9,7 +10,7 @@ const LoginFormOne = () => {
     const { login, password } = form.elements;
 
     // Посилання на DOM-елементи
-    console.log(login, password);
+    // console.log(login, password);
 
     // Значення полів
     console.log(login.value, password.value);

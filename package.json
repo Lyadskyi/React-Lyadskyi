@@ -26,5 +26,15 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "prop-types": "^15.8.1",
     "vite": "^5.2.0"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass"
+      ]
+    }
   }
 }

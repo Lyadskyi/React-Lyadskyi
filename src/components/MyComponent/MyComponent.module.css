@@ -1,0 +1,15 @@
+.id {
+  display: flex;
+  gap: 8px;
+}
+
+.label {
+  font-size: 20px;
+  color: brown;
+}
+
+.input {
+  border-radius: 5px;
+  padding: 8px;
+  background-color: antiquewhite;
+}
