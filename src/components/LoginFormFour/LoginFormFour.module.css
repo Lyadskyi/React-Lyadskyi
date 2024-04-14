@@ -1,0 +1,11 @@
+.controlForm {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.input {
+  padding: 5px;
+  border-radius: 5px;
+  background: antiquewhite;
+}
