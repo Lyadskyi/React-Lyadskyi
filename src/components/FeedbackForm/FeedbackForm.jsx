@@ -56,7 +56,7 @@ const FeedbackForm = () => {
           name="email"
           id={emailFieldId}
         />
-        <ErrorMessage name="email" component="span" />
+        <ErrorMessage className={css.error} name="email" component="span" />
         <label htmlFor={msgFieldId}>Message</label>
         <Field
           className={css.textArea}
@@ -65,14 +65,18 @@ const FeedbackForm = () => {
           id={msgFieldId}
           rows="5"
         />
-        <ErrorMessage name="message" component="span" />
+        <ErrorMessage className={css.error} name="message" component="span" />
         <label htmlFor={levelFieldId}>Service satisfaction level</label>
         <Field as="select" name="level" id={levelFieldId}>
           <option value="good">Good</option>
           <option value="neutral">Neutral</option>
           <option value="bad">Bad</option>
         </Field>
-        <ErrorMessage name="level" component="span" />
+        <ErrorMessage
+          className={css.errorLevel}
+          name="level"
+          component="span"
+        />
         <button className={css.btn} type="submit">
           Submit
         </button>
