@@ -10,6 +10,7 @@ import LoginFormThree from "../LoginFormThree/LoginFormThree";
 import SearchBar from "../SearchBar/SearchBar";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import LoginFormFour from "../LoginFormFour/LoginFormFour";
+import FeedbackForm from "../FeedbackForm/FeedbackForm";
 
 // Import Styles
 import css from "./App.module.css";
@@ -46,6 +47,7 @@ const App = () => {
     <>
       <hr /> <hr />
       <h2 className={css.moduleHead}>Lesson 1. Forms</h2>
+      <hr /> <hr />
       <form className={css.form} onClick={handleClick}>
         <input className={css.input} type="text" name="login" />
         <input className={css.input} type="password" name="password" />
@@ -129,6 +131,8 @@ const App = () => {
       <LoginFormFour />
       <hr /> <hr />
       <h2 className={css.moduleHead}>Lesson 2. Formik library</h2>
+      <hr /> <hr />
+      <FeedbackForm />
       <hr /> <hr />
     </>
   );
