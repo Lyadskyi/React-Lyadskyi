@@ -1,112 +1,90 @@
-// src/components/App.jsx
+// src/components/App.jsx;
+
+// ===== HTTP-запити ===== //
+// ===== Обробка даних запиту ===== //
+// ===== Індикатор завантаження ===== //
+// ===== Обробка помилок ===== //
+// ===== Поділ відповідальності ===== //
+// ===== Пошук через форму ===== //
+
 import { useEffect, useState } from "react";
-import axios from "axios";
-
-// Import Components
-import ArticleList from "../ArticleList/ArticleList ";
-
-// Import Styles
-// import css from "./App.module.css";
+import { BiLoaderCircle } from "react-icons/bi";
+import ArticleList from "../ArticleList/ArticleList";
+// 1. Імпортуємо HTTP-функцію
+import { fetchArticlesWithTopic } from "../../articles-api";
+import css from "./App.module.css";
+import { SearchForm } from "../SearchForm/SearchForm";
 
 const App = () => {
-  // useEffect(() => {
-  //   // Тут будемо виконувати HTTP-запит
-  // }, []);
-
-  // ❌ Так робити не можна!
-  // useEffect(async () => {}, []);
-
-  // 1. Оголошуємо стан
+  // 2. Оголошуємо стани
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  //   /* Код ефекту */
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    // Оголошуємо асинхронну функцію
+    // 3. Оголошуємо асинхронну функцію
     async function fetchArticles() {
+      // === Тут будемо виконувати HTTP-запит === //
       try {
-        // Встановлюємо індикатор в true перед запитом
+        // 4. Встановлюємо індикатор в true перед запитом
         setLoading(true);
-        // Тут будемо виконувати HTTP-запит
-        const response = await axios.get(
-          "https://hn.algolia.com/api/v1/search?query=react"
-        );
-        console.log(response);
-        // Записуємо дані в стан
-        setArticles(response.data.hits);
+        // 5. Використовуємо HTTP-функцію
+        const data = await fetchArticlesWithTopic("react");
+        // 6. Записуємо дані в стан
+        setArticles(data);
       } catch (error) {
         // Тут будемо обробляти помилку
+        // Встановлюємо стан error в true
+        setError(true);
       } finally {
-        // Встановлюємо індикатор в false після запиту
+        // 7. Встановлюємо індикатор в false після запиту
         setLoading(false);
       }
     }
-    // Викликаємо її одразу після оголошення
+    // 8. Викликаємо асинхронну функцію одразу після оголошення
     fetchArticles();
   }, []);
 
+  const handleSearch = async (topic) => {
+    try {
+      setArticles([]);
+      setError(false);
+      setLoading(true);
+      const data = await fetchArticlesWithTopic(topic);
+      setArticles(data);
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div>
+    <>
       <hr /> <hr />
-      <h1>Latest articles</h1>
-      {loading && <p>Loading data, please wait...</p>}
+      <h2 className={css.title}>Latest articles</h2>
+      {loading && (
+        <div className={css.load}>
+          <BiLoaderCircle />
+          <p style={{ fontSize: 18 }}>Loading data, please wait...</p>
+        </div>
+      )}
+      {error && (
+        <p className={css.error}>
+          Whoops, something went wrong! Please try reloading this page!
+        </p>
+      )}
       {articles.length > 0 && <ArticleList items={articles} />}
       <hr /> <hr />
-    </div>
+      <h2 className={css.title}>Search through the form</h2>
+      <SearchForm onSearch={handleSearch} />
+      <hr /> <hr />
+    </>
   );
 };
+
 export default App;
 
-// ========================== //
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import { ArticleList } from "./ArticleList";
+// ===== ❌ Так робити не можна! ===== //
 
-// const App = () => {
-//   const [articles, setArticles] = useState([]);
-//   const [loading, setLoading] = useState(false);
-
-//   /* Код ефекту */
-
-//   return (
-//     <div>
-//       <h1>Latest articles</h1>
-//       {loading && <p>Loading data, please wait...</p>}
-//       {articles.length > 0 && <ArticleList items={articles} />}
-//     </div>
-//   );
-// };
-
-// const App = () => {
-//   const [articles, setArticles] = useState([]);
-//   const [loading, setLoading] = useState(false);
-
-//   useEffect(() => {
-//     async function fetchArticles() {
-//       try {
-//         // 1. Встановлюємо індикатор в true перед запитом
-//         setLoading(true);
-//         const response = await axios.get(
-//           "<https://hn.algolia.com/api/v1/search?query=react>"
-//         );
-//         setArticles(response.data.hits);
-//       } catch (error) {
-//         // Тут будемо обробляти помилку
-//       } finally {
-//         // 2. Встановлюємо індикатор в false після запиту
-//         setLoading(false);
-//       }
-//     }
-
-//     fetchArticles();
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Latest articles</h1>
-//       {loading && <p>Loading data, please wait...</p>}
-//       {articles.length > 0 && <ArticleList items={articles} />}
-//     </div>
-//   );
-// };
+// useEffect(async () => {}, []);
