@@ -1,3 +1,5 @@
+// src/components/ArticleList.jsx;
+
 import css from "./ArticleList.module.css";
 
 const ArticleList = ({ items }) => (

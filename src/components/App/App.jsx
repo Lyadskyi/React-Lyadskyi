@@ -8,12 +8,13 @@
 // ===== Пошук через форму ===== //
 
 import { useEffect, useState } from "react";
-import { BiLoaderCircle } from "react-icons/bi";
+import { SearchForm } from "../SearchForm/SearchForm";
+import Loader from "../Loader/Loader";
+import Error from "../Error/Error";
 import ArticleList from "../ArticleList/ArticleList";
 // 1. Імпортуємо HTTP-функцію
 import { fetchArticlesWithTopic } from "../../articles-api";
 import css from "./App.module.css";
-import { SearchForm } from "../SearchForm/SearchForm";
 
 const App = () => {
   // 2. Оголошуємо стани
@@ -62,22 +63,13 @@ const App = () => {
   return (
     <>
       <hr /> <hr />
-      <h2 className={css.title}>Latest articles</h2>
-      {loading && (
-        <div className={css.load}>
-          <BiLoaderCircle />
-          <p style={{ fontSize: 18 }}>Loading data, please wait...</p>
-        </div>
-      )}
-      {error && (
-        <p className={css.error}>
-          Whoops, something went wrong! Please try reloading this page!
-        </p>
-      )}
-      {articles.length > 0 && <ArticleList items={articles} />}
-      <hr /> <hr />
       <h2 className={css.title}>Search through the form</h2>
       <SearchForm onSearch={handleSearch} />
+      <hr /> <hr />
+      <h2 className={css.title}>Latest articles</h2>
+      {loading && <Loader />}
+      {error && <Error />}
+      {articles.length > 0 && <ArticleList items={articles} />}
       <hr /> <hr />
     </>
   );
