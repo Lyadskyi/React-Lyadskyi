@@ -8,13 +8,13 @@
 // ===== Пошук через форму ===== //
 
 import { useEffect, useState } from "react";
+import { SearchForm } from "../SearchForm/SearchForm";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 import ArticleList from "../ArticleList/ArticleList";
 // 1. Імпортуємо HTTP-функцію
 import { fetchArticlesWithTopic } from "../../articles-api";
 import css from "./App.module.css";
-import { SearchForm } from "../SearchForm/SearchForm";
 
 const App = () => {
   // 2. Оголошуємо стани
