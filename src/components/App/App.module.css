@@ -42,3 +42,7 @@ img {
   color: blueviolet;
   text-align: center;
 }
+
+.filterBtn {
+  margin-bottom: 15px;
+}

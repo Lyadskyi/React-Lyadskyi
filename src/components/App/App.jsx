@@ -8,6 +8,7 @@
 // ===== Пошук через форму ===== //
 
 import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { SearchForm } from "../SearchForm/SearchForm";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
@@ -21,6 +22,10 @@ const App = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  // * Хук useMemo * //
+  const [planets, setPlanets] = useState(["Earth", "Mars", "Jupiter", "Venus"]);
+  const [query, setQuery] = useState("");
+  const [clicks, setClicks] = useState(0);
 
   useEffect(() => {
     // 3. Оголошуємо асинхронну функцію
@@ -60,8 +65,22 @@ const App = () => {
     }
   };
 
+  // const memoizedValue = useMemo(() => {
+  //   return a + b;
+  // }, [a, b]);
+
+  // const filteredPlanets = planets.filter((planet) => planet.includes(query));
+  const filteredPlanets = useMemo(
+    () => planets.filter((planet) => planet.includes(query)),
+    [planets, query]
+  );
+  console.log(setPlanets);
+  console.log(setQuery);
+
   return (
     <>
+      <hr /> <hr />
+      <h2>Lesson 1. HTTP requests</h2>
       <hr /> <hr />
       <h2 className={css.title}>Search through the form</h2>
       <SearchForm onSearch={handleSearch} />
@@ -70,6 +89,17 @@ const App = () => {
       {loading && <Loader />}
       {error && <Error />}
       {articles.length > 0 && <ArticleList items={articles} />}
+      <hr /> <hr />
+      <h2>Lesson 2. The useMemo hook</h2>
+      <hr /> <hr />
+      <button className={css.filterBtn} onClick={() => setClicks(clicks + 1)}>
+        Number of clicks: {clicks}
+      </button>
+      <ul>
+        {filteredPlanets.map((planet) => (
+          <li key={planet}>{planet}</li>
+        ))}
+      </ul>
       <hr /> <hr />
     </>
   );
