@@ -46,3 +46,13 @@ img {
 .filterBtn {
   margin-bottom: 15px;
 }
+
+.titleLesson {
+  color: blueviolet;
+}
+
+.containerRef {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
