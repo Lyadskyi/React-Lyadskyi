@@ -43,16 +43,24 @@ img {
   text-align: center;
 }
 
-.filterBtn {
-  margin-bottom: 15px;
-}
-
 .titleLesson {
   color: blueviolet;
 }
 
-.containerRef {
+.nav {
   display: flex;
-  gap: 10px;
-  margin: 15px 0;
+  gap: 15px;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: orange;
 }
