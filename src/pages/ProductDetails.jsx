@@ -5,6 +5,8 @@ export default function ProductDetails() {
   const { id } = useParams();
   const product = getProductById(id);
 
+  console.log(id, product);
+
   return (
     <main>
       <img src="https://via.placeholder.com/960x240" alt="" />
@@ -24,3 +26,12 @@ export default function ProductDetails() {
     </main>
   );
 }
+
+// src/pages/ProductDetails.jsx
+
+// import { useParams } from "react-router-dom";
+
+// const ProductDetails = () => {
+//   const { productId } = useParams();
+//   return <div>Now showing product with id - {productId}</div>;
+// };

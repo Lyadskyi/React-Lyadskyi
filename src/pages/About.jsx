@@ -1,7 +1,9 @@
+import { Link, Outlet } from "react-router-dom";
+
 export default function About() {
   return (
     <main>
-      <h3>About Us</h3>
+      <h2>About Us</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
         laborum amet ab cumque sit nihil dolore modi error repudiandae
@@ -15,6 +17,44 @@ export default function About() {
         dolorum illum voluptatum dolores! Quas perferendis quis alias excepturi
         eaque voluptatibus eveniet error, nulla rem iusto?
       </p>
+      <h2>About page</h2>
+      <ul>
+        <li>
+          <Link to="mission">Read about our mission</Link>
+        </li>
+        <li>
+          <Link to="team">Get to know the team</Link>
+        </li>
+        <li>
+          <Link to="reviews">Go through the reviews</Link>
+        </li>
+      </ul>
+      <Outlet />
     </main>
   );
 }
+
+// =============================
+// src/pages/About.jsx
+
+// import { Link, Outlet } from "react-router-dom";
+
+// export const About = () => {
+//   return (
+//     <div>
+//       <h1>About page</h1>
+//       <ul>
+//         <li>
+//           <Link to="mission">Read about our mission</Link>
+//         </li>
+//         <li>
+//           <Link to="team">Get to know the team</Link>
+//         </li>
+//         <li>
+//           <Link to="reviews">Go through the reviews</Link>
+//         </li>
+//       </ul>
+//       <Outlet />
+//     </div>
+//   );
+// };
