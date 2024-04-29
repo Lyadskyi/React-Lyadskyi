@@ -9,6 +9,9 @@ import About from "../../pages/About";
 import Products from "../../pages/Products";
 import ProductDetails from "../../pages/ProductDetails";
 import NotFound from "../../pages/NotFound";
+import { Mission } from "../Mission/Mission";
+import { Team } from "../Team/Team";
+import { Reviews } from "../Reviews/Reviews";
 
 import css from "./App.module.css";
 
@@ -47,11 +50,22 @@ const App = () => {
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />}>
+          <Route path="mission" element={<Mission />} />
+          <Route path="team" element={<Team />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      {/* ✅ Правильно */}
+      {/* <Route path="/about" element={<About />}>
+        <Route path="mission" element={<Mission />} />
+        <Route path="team" element={<Team />} />
+        <Route path="reviews" element={<Reviews />} />
+      </Route> */}
       <hr /> <hr />
     </div>
   );
