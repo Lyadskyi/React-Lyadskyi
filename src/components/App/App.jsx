@@ -14,6 +14,7 @@ import { Team } from "../Team/Team";
 import { Reviews } from "../Reviews/Reviews";
 
 import css from "./App.module.css";
+import LoginForm from "../LoginForm/LoginForm";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -66,6 +67,10 @@ const App = () => {
         <Route path="team" element={<Team />} />
         <Route path="reviews" element={<Reviews />} />
       </Route> */}
+      <hr /> <hr />
+      <h2 className={css.titleLesson}>Lesson 2. Software navigation</h2>
+      <hr /> <hr />
+      <LoginForm />
       <hr /> <hr />
     </div>
   );
